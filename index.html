@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Distribuidora Gaguitos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Distribuidora Gaguitos</h1>
+    <nav>
+      <a href="#produtos">Produtos</a>
+      <a href="#pedido">Monte seu Pedido</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <main>
+    <section id="produtos">
+      <h2>Produtos Disponíveis</h2>
+      <ul>
+        <li>
+          <span>Mesas 4 lugares - R$ 12,00</span>
+          <button data-item="Mesas 4 lugares" data-price="12">Adicionar</button>
+        </li>
+        <li>
+          <span>Cadeiras - R$ 3,00</span>
+          <button data-item="Cadeiras" data-price="3">Adicionar</button>
+        </li>
+        <li>
+          <span>Toalhas - R$ 5,00</span>
+          <button data-item="Toalhas" data-price="5">Adicionar</button>
+        </li>
+      </ul>
+    </section>
+
+    <section id="pedido">
+      <h2>Monte seu Pedido</h2>
+      <div id="pedido-lista"></div>
+      <p><strong>Total:</strong> <span id="total">R$ 0,00</span></p>
+      <button id="finalizar-pedido">Finalizar Pedido</button>
+    </section>
+  </main>
+
+  <footer id="contato">
+    <p>Endereço: QNL 08 Conjunto F lote 06</p>
+    <p>WhatsApp: <a href="https://wa.me/5561998084480" target="_blank">61 99808-4480</a></p>
+  </footer>
+
+  <script src="js/app.js" defer></script>
+</body>
+</html>
