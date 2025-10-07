@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Distribuidora Gaguitos - Aluguel de mesas, toalhas, brinquedos e mais.">
+  <title>Distribuidora Gaguitos</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      background-color: #1a237e;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      padding: 15px;
+      background-color: #e3e3e3;
+    }
+    .button {
+      background-color: #3949ab;
+      color: white;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+    .button:hover {
+      background-color: #303f9f;
+    }
+    section {
+      padding: 20px;
+      background-color: white;
+      margin: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #1a237e;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    ul li::before {
+      content: "✔️ ";
+      color: green;
+    }
+    .color-cards {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .color-card {
+      width: 130px;
+      height: 100px;
+      border-radius: 8px;
+      text-align: center;
+      padding-top: 25px;
+      font-weight: bold;
+      box-shadow: 0 0 5px rgba(0,0,0,0.2);
+    }
+    .product-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin-top: 10px;
+    }
+    .product {
+      background: #f0f0f0;
+      border: 1px solid #ccc;
+      padding: 12px;
+      border-radius: 8px;
+      width: 250px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .product button {
+      background: #1a237e;
+      color: white;
+      border: none;
+      padding: 8px 12px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .cart {
+      margin-top: 20px;
+      border-top: 1px solid #ccc;
+    }
+    .cart-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px dashed #ccc;
+    }
+    .cart-item input[type="number"] {
+      width: 50px;
+      padding: 5px;
+      margin-left: 5px;
+    }
+    .cart-item .remove {
+      background: crimson;
+      color: white;
+      border: none;
+      padding: 5px 8px;
+      margin-left: 10px;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+    .total {
+      font-size: 1.2rem;
+      font-weight: bold;
+      margin-top: 15px;
+    }
+    .form-section {
+      margin-top: 15px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input[type="text"], input[type="date"] {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #aaa;
+      width: 100%;
+      max-width: 400px;
+    }
+    button {
+      background-color: #2e7d32;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #1b5e20;
+    }
+    footer {
+      background-color: #1a237e;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Distribuidora Gaguitos</h1>
+    <p>Transforme qualquer festa em uma experiência inesquecível 🎉</p>
+  </header>
+
+  <nav>
+    <a class="button" href="https://wa.me/5561998084480" target="_blank">💬 WhatsApp</a>
+    <a class="button" href="https://www.instagram.com/distribuidora_gaguitos/" target="_blank">📸 Instagram</a>
+    <a class="button" href="https://www.google.com/maps?q=Distribuidora+Gaguitos" target="_blank">📍 Nosso Endereço</a>
+  </nav>
+
+  <section>
+    <h2>🏪 Sobre a Distribuidora Gaguitos</h2>
+    <p><strong>Há mais de 20 anos, realizamos momentos inesquecíveis.</strong></p>
+    <p>A <strong>Distribuidora Gaguitos</strong> é referência em <strong>locação de itens para festas e eventos</strong>, além da distribuição de bebidas com qualidade e agilidade.</p>
+    <ul>
+      <li>Pontualidade garantida</li>
+      <li>Materiais limpos e bem cuidados</li>
+      <li>Atendimento personalizado</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>🎨 Cores Tradicionais das Toalhas</h2>
+    <div class="color-cards">
+      <div class="color-card" style="background-color: rgb(255,255,255); color: black;">Branco<br><small></small></div>
+      <div class="color-card" style="background-color: rgb(255,0,0); color: white;">Vermelho<br><small></small></div>
+      <div class="color-card" style="background-color: rgb(0,0,255); color: white;">Azul<br><small></small></div>
+      <div class="color-card" style="background-color: rgb(255,255,0);">Amarelo<br><small></small></div>
+      <div class="color-card" style="background-color: rgb(0,128,0); color: white;">Verde<br><small></small></div>
+      <div class="color-card" style="background-color: rgb(128,0,128); color: white;">Roxo<br><small></small></div>
+      <div class="color-card" style="background-color: rgb(255,165,0);">Laranja<br><small></small></div>
+      <div class="color-card" style="background-color: rgb(255,192,203);">Rosa<br><small></small></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>🛍️ Monte seu Pedido</h2>
+    <div class="product-list" id="productList"></div>
+    <h2>Carrinho</h2>
+    <div class="cart" id="cart"></div>
+    <div class="total" id="total">Total: R$ 0,00</div>
+
+    <h2>Seus Dados</h2>
+    <div class="form-section">
+      <label for="nome">Seu nome</label>
+      <input type="text" id="nome" placeholder="Digite seu nome completo" />
+
+      <label for="data">Data do evento</label>
+      <input type="date" id="data" />
+
+      <label for="endereco">Endereço do evento</label>
+      <input type="text" id="endereco" placeholder="Ex: Rua X, Nº, Bairro" />
+
+      <button onclick="finalizarPedido()">📲 Enviar Pedido via WhatsApp</button>
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2025 Distribuidora Gaguitos - Amor, cor e praticidade em cada festa 💖</p>
+  </footer>
+
+  <script>
+    const produtos = [
+      { nome: "Mesas 4 lugares", descricao: "Mesas para 4 pessoas", preco: 12 },
+      { nome: "Mesas 6 lugares", descricao: "Mesas para 6 pessoas", preco: 20 },
+      { nome: "Toalhas 1.5m", descricao: "Toalhas de 1.5 metros", preco: 7 },
+      { nome: "Toalhas 3m", descricao: "Toalhas de 3 metros", preco: 12 },
+      { nome: "Cama Elástica", descricao: "Cama elástica 3,05m", preco: 150 },
+      { nome: "Piscina de bolinhas", descricao: "Piscina 2.5m", preco: 150 }
+    ];
+    const carrinho = [];
+
+    function carregarProdutos() {
+      const list = document.getElementById("productList");
+      produtos.forEach((produto, index) => {
+        const el = document.createElement("div");
+        el.className = "product";
+        el.innerHTML = `
+          <div>
+            <strong>${produto.nome}</strong><br>
+            ${produto.descricao}<br>
+            <strong>R$ ${produto.preco.toFixed(2)}</strong>
+          </div>
+          <button onclick="adicionarProduto(${index})">Adicionar</button>
+        `;
+        list.appendChild(el);
+      });
+    }
+
+    function adicionarProduto(index) {
+      const produto = produtos[index];
+      const existente = carrinho.find(item => item.nome === produto.nome);
+      if (existente) {
+        existente.quantidade += 1;
+      } else {
+        carrinho.push({ ...produto, quantidade: 1 });
+      }
+      atualizarCarrinho();
+    }
+
+    function atualizarCarrinho() {
+      const cartEl = document.getElementById("cart");
+      cartEl.innerHTML = "";
+      let total = 0;
+
+      carrinho.forEach((item, index) => {
+        total += item.preco * item.quantidade;
+        const el = document.createElement("div");
+        el.className = "cart-item";
+        el.innerHTML = `
+          <div>
+            <strong>${item.nome}</strong><br>Qtd: 
+            <input type="number" min="1" value="${item.quantidade}" onchange="atualizarQuantidade(${index}, this.value)">
+          </div>
+          <div>
+            R$ ${(item.preco * item.quantidade).toFixed(2)} 
+            <button class="remove" onclick="removerItem(${index})">Remover</button>
+          </div>
+        `;
+        cartEl.appendChild(el);
+      });
+
+      document.getElementById("total").innerText = "Total: R$ " + total.toFixed(2);
+    }
+
+    function atualizarQuantidade(index, valor) {
+      const qtd = parseInt(valor);
+      if (qtd > 0) {
+        carrinho[index].quantidade = qtd;
+        atualizarCarrinho();
+      }
+    }
+
+    function removerItem(index) {
+      carrinho.splice(index, 1);
+      atualizarCarrinho();
+    }
+
+    function finalizarPedido() {
+      const nome = document.getElementById("nome").value.trim();
+      const data = document.getElementById("data").value;
+      const endereco = document.getElementById("endereco").value.trim();
+
+      if (!nome || !data || !endereco) {
+        alert("Por favor, preencha todos os campos.");
+        return;
+      }
+
+      if (carrinho.length === 0) {
+        alert("Carrinho vazio!");
+        return;
+      }
+
+      let mensagem = `Olá! Gostaria de fazer um pedido:%0A%0A`;
+      mensagem += `🧑 Nome: ${nome}%0A📅 Data do evento: ${data}%0A📍 Endereço: ${endereco}%0A%0A📦 Itens:%0A`;
+
+      carrinho.forEach(item => {
+        mensagem += `• ${item.nome} - Qtd: ${item.quantidade} - R$ ${(item.preco * item.quantidade).toFixed(2)}%0A`;
+      });
+
+      const total = carrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+      mensagem += `%0A💰 Total: R$ ${total.toFixed(2)}`;
+
+      const telefone = "5561998084480";
+      window.open(`https://wa.me/${telefone}?text=${mensagem}`, "_blank");
+    }
+
+    carregarProdutos();
+  </script>
+</body>
+</html>
