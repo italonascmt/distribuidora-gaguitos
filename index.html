@@ -162,6 +162,42 @@
       padding: 20px;
       margin-top: 20px;
     }
+
+    /* 🔹 Banner de promoção atualizado e responsivo */
+    .promocao-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 15px;
+    }
+
+    .promocao-texto {
+      background: linear-gradient(90deg, #00c853, #b2ff59);
+      color: black;
+      font-weight: bold;
+      padding: 15px 25px;
+      border-radius: 8px;
+      text-align: center;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      font-size: 1.2rem;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 768px) {
+      .promocao-texto {
+        font-size: 1rem;
+        padding: 12px 18px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .promocao-texto {
+        font-size: 0.95rem;
+        padding: 10px 15px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -191,14 +227,21 @@
   <section>
     <h2>🎨 Cores Tradicionais das Toalhas</h2>
     <div class="color-cards">
-      <div class="color-card" style="background-color: rgb(255,255,255); color: black;">Branco<br><small></small></div>
-      <div class="color-card" style="background-color: rgb(255,0,0); color: white;">Vermelho<br><small></small></div>
-      <div class="color-card" style="background-color: rgb(0,0,255); color: white;">Azul<br><small></small></div>
-      <div class="color-card" style="background-color: rgb(255,255,0);">Amarelo<br><small></small></div>
-      <div class="color-card" style="background-color: rgb(0,128,0); color: white;">Verde<br><small></small></div>
-      <div class="color-card" style="background-color: rgb(128,0,128); color: white;">Roxo<br><small></small></div>
-      <div class="color-card" style="background-color: rgb(255,165,0);">Laranja<br><small></small></div>
-      <div class="color-card" style="background-color: rgb(255,192,203);">Rosa<br><small></small></div>
+      <div class="color-card" style="background-color: rgb(255,255,255); color: black;">Branco</div>
+      <div class="color-card" style="background-color: rgb(255,0,0); color: white;">Vermelho</div>
+      <div class="color-card" style="background-color: rgb(0,0,255); color: white;">Azul</div>
+      <div class="color-card" style="background-color: rgb(255,255,0);">Amarelo</div>
+      <div class="color-card" style="background-color: rgb(0,128,0); color: white;">Verde</div>
+      <div class="color-card" style="background-color: rgb(128,0,128); color: white;">Roxo</div>
+      <div class="color-card" style="background-color: rgb(255,165,0);">Laranja</div>
+      <div class="color-card" style="background-color: rgb(255,192,203);">Rosa</div>
+    </div>
+  </section>
+
+  <!-- 🔹 Novo banner de promoção -->
+  <section class="promocao-container">
+    <div class="promocao-texto">
+      💥 <strong>Promoção imperdível!</strong> Alugue 5 jogos ou mais e pague apenas <b>R$12,00</b> por jogo!
     </div>
   </section>
 
@@ -230,13 +273,14 @@
 
   <script>
     const produtos = [
-      { nome: "Mesas 4 lugares", descricao: "Mesas para 4 pessoas", preco: 12 },
+      { nome: "Mesas 4 lugares", descricao: "Mesas para 4 pessoas", preco: 15 },
       { nome: "Mesas 6 lugares", descricao: "Mesas para 6 pessoas", preco: 20 },
       { nome: "Toalhas 1.5m", descricao: "Toalhas de 1.5 metros", preco: 7 },
       { nome: "Toalhas 3m", descricao: "Toalhas de 3 metros", preco: 12 },
       { nome: "Cama Elástica", descricao: "Cama elástica 3,05m", preco: 150 },
       { nome: "Piscina de bolinhas", descricao: "Piscina 2.5m", preco: 150 }
     ];
+
     const carrinho = [];
 
     function carregarProdutos() {
@@ -273,16 +317,23 @@
       let total = 0;
 
       carrinho.forEach((item, index) => {
-        total += item.preco * item.quantidade;
+        if (item.nome === "Mesas 4 lugares") {
+          item.preco = item.quantidade >= 5 ? 12 : 15;
+        }
+
+        const subtotal = item.preco * item.quantidade;
+        total += subtotal;
+
         const el = document.createElement("div");
         el.className = "cart-item";
         el.innerHTML = `
           <div>
-            <strong>${item.nome}</strong><br>Qtd: 
+            <strong>${item.nome}</strong><br>Qtd:
             <input type="number" min="1" value="${item.quantidade}" onchange="atualizarQuantidade(${index}, this.value)">
+            <br><small>R$ ${item.preco.toFixed(2)} cada</small>
           </div>
           <div>
-            R$ ${(item.preco * item.quantidade).toFixed(2)} 
+            R$ ${subtotal.toFixed(2)} 
             <button class="remove" onclick="removerItem(${index})">Remover</button>
           </div>
         `;
